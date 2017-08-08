@@ -1,0 +1,29 @@
+{
+  "name": "title-extractor",
+  "version": "1.0.18",
+  "description": "Extract web page title and other relavant fields",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "request" : "2.81.0",
+    "unfluff": "^1.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fromdev/title-extractor.git"
+  },
+  "keywords": [
+    "title",
+    "extractor",
+    "node",
+    "web"
+  ],
+  "author": "Sachin Joshi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fromdev/title-extractor.git/issues"
+  },
+  "homepage": "https://github.com/fromdev/title-extractor.git#readme"
+}
