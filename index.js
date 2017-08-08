@@ -3,21 +3,20 @@
 var request = require('request');
 var extractor = require('unfluff');
 
-const extractTitle = function (req, res) {
-    var url = req.query.u;
+const extractTitle = function (url, callback) {
     if (url) {
         request(url, function (error, response, html) {
             if (!error) {
                 var data = extractor(html);
                 console.log(data);
-                return res.send(data);
+                return callback(data);
             } else {
                 console.log(error);
-                return res.send({"error": 'Error extracting title for ' + url});
+                return callback({"error": 'Error extracting title for ' + url});
             }
         });
     } else {
-        return res.send({"error": 'Please provide valid URL'});
+        return callback({"error": 'Please provide valid URL'});
     }
 };
 

@@ -1,6 +1,6 @@
 {
   "name": "title-extractor",
-  "version": "1.0.18",
+  "version": "1.0.20",
   "description": "Extract web page title and other relavant fields",
   "main": "index.js",
   "scripts": {
