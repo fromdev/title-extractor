@@ -3,24 +3,25 @@
 var request = require('request');
 var extractor = require('unfluff');
 
-const extractTitle = function (url, callback) {
-    if (url) {
-        request(url, function (error, response, html) {
-            if (!error) {
-                var data = extractor(html);
-                console.log(data);
-                return callback(data);
-            } else {
-                console.log(error);
-                return callback({"error": 'Error extracting title for ' + url});
-            }
-        });
-    } else {
-        return callback({"error": 'Please provide valid URL'});
-    }
+const extractTitle = function (url) {
+    return new Promise((resolve, reject) => {
+        if (url) {
+            request(url, function (error, response, html) {
+                if (!error) {
+                    var data = extractor(html);
+                    console.log(data);
+                    return resolve(data);
+                } else {
+                    console.log(error);
+                    return reject({"error": 'Error extracting title for ' + url});
+                }
+            });
+        } else {
+            return reject({"error": 'Please provide valid URL'});
+        }
+    });
+}
+
+module.exports = {
+    extractTitle: extractTitle
 };
-
-module.exports = extractTitle;
-
-module.exports.extractTitle = extractTitle;
-

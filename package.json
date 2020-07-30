@@ -1,13 +1,13 @@
 {
   "name": "title-extractor",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "description": "Extract web page title and other relavant fields",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "request" : "2.81.0",
+    "request": "2.81.0",
     "unfluff": "^1.1.0"
   },
   "repository": {
